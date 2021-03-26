@@ -1,0 +1,25 @@
+$slateBlue: #8CB3D7;
+$purple: #B08CD7;
+$widthMobile: 500px;
+html {
+    height: 100%;
+    @media screen and (max-width: 500px) {
+        height: 130%;
+    }
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(to right, $slateBlue, $purple);
+    @media screen and (max-width: $widthMobile) {
+        background: linear-gradient($slateBlue, $purple);
+        flex-direction: row;
+        min-height: 100%;
+    }
+}

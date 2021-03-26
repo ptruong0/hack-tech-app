@@ -1,0 +1,97 @@
+$slateBlue: #8CB3D7;
+$purple: #B08CD7;
+$formHeight: 500px;
+$formWidth: 400px;
+$widthMobile: 500px;
+.App {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    @media screen and (max-width: $widthMobile) {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.petr-img {
+    position: relative;
+    padding: $formHeight / 4 0;
+    width: auto;
+    max-height: $formHeight / 2;
+    overflow-y: hidden;
+    animation: spin 3s infinite linear;
+    @media screen and (max-width: $widthMobile) {
+        padding: $formHeight / 12 $formWidth / 3;
+        width: $formWidth / 3;
+        max-height: auto;
+    }
+}
+
+#app-form {
+    min-width: $formWidth;
+    min-height: $formHeight;
+    padding: 20px;
+    background-color: white;
+    border-radius: 30px;
+    justify-content: center;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, .2);
+    .form-col {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 30px;
+    }
+    .form-title {
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+    .form-group {}
+    .form-label {
+        font-weight: bold;
+        &:after {
+            content: "*";
+            color: red;
+        }
+    }
+    .form-input {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid black;
+    }
+    .form-fun-fact {
+        min-height: 80px;
+        max-width: 100%;
+    }
+    .form-btn {
+        background: linear-gradient($slateBlue, $purple);
+        padding: 10px 30px;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 20px;
+        border: none;
+        color: white;
+        margin: 10px 0 0 auto;
+    }
+     ::placeholder {
+        font-family: 'Montserrat', sans-serif;
+    }
+    .red-req {
+        color: red;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
